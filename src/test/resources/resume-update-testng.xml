@@ -1,0 +1,9 @@
+<suite name="Update Suite">
+    <test name="MonsterResumeUpdate">
+        <parameter name="username" value="username"/>
+        <parameter name="password" value="password"/>
+        <classes>
+            <class name="org.example.ResumeUpdateTest"/>
+        </classes>
+    </test>
+</suite>
