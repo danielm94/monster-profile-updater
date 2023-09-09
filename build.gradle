@@ -12,6 +12,7 @@ repositories {
 dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.12.1'
     testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.5.3")
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
