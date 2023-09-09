@@ -128,8 +128,9 @@ public class DriverUtils {
     public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
+            driver.findElement(by);
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
@@ -144,7 +145,7 @@ public class DriverUtils {
         try {
             waitForVisibility(element);
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
