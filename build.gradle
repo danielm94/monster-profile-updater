@@ -17,7 +17,7 @@ dependencies {
 
 test {
     useTestNG() {
-        suites 'src/test/resources/testng.xml'
+        suites 'src/test/resources/resume-update-testng.xml'
     }
     systemProperty 'username', System.getProperty('username')
     systemProperty 'password', System.getProperty('password')
