@@ -28,7 +28,6 @@ public class ResumeUpdateTest {
 
     @Test
     public void testResumeUpdate(){
-        //-ea -Dusername=user -Dpassword=pass
         driver.get(MONSTER_URL);
     }
 
