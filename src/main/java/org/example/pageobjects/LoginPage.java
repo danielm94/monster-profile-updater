@@ -51,7 +51,7 @@ public class LoginPage {
     /**
      * Clicks the login button to submit the login information.
      */
-    public void clickLoginButton() {
+    public void submitLoginInformation() {
         driverUtils.clickElement(logInButton);
     }
 }
