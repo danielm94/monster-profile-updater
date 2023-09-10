@@ -23,7 +23,4 @@ jobs:
       run: chmod +x gradlew
 
     - name: Run tests using Gradle
-      run: ./gradlew test --info
-      env:
-        USERNAME: ${{ secrets.MONSTER_USERNAME }}
-        PASSWORD: ${{ secrets.MONSTER_PASSWORD }}
+      run: ./gradlew test --info -Dusername=${{ secrets.MONSTER_USERNAME }} -Dpassword=${{ secrets.MONSTER_PASSWORD }}
