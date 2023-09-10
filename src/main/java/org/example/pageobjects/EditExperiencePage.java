@@ -47,6 +47,7 @@ public class EditExperiencePage {
      * @param text the text to be set.
      */
     public void setCompanyNameText(String text) {
+        driverUtils.clearInputField(companyNameField);
         driverUtils.sendKeysToElement(companyNameField, text);
     }
 
