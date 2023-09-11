@@ -1,12 +1,16 @@
 package org.example.pageobjects;
 
 import org.example.util.DriverUtils;
+import org.example.util.PasswordEncryptor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage {
+    private static final Logger LOG = LoggerFactory.getLogger(LoginPage.class);
     private final DriverUtils driverUtils;
     private final WebDriver driver;
 
@@ -36,6 +40,7 @@ public class LoginPage {
      * @param email The email to be entered.
      */
     public void enterEmail(String email) {
+        LOG.info("Entering the following email into the email field - {}", email);
         driverUtils.sendKeysToElement(emailAddressField, email);
     }
 
@@ -45,6 +50,8 @@ public class LoginPage {
      * @param password The password to be entered.
      */
     public void enterPassword(String password) {
+        var encryptedPassword = PasswordEncryptor.maskPassword(password);
+        LOG.info("Entering the following password into the password field - {}", encryptedPassword);
         driverUtils.sendKeysToElement(passwordField, password);
     }
 
@@ -52,6 +59,7 @@ public class LoginPage {
      * Clicks the login button to submit the login information.
      */
     public void submitLoginInformation() {
+        LOG.info("Clicking the login button to submit the login information...");
         driverUtils.clickElement(logInButton);
     }
 }

@@ -5,11 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represents the main page of the application, providing interaction with its elements.
  */
 public class MainPage {
+    private static final Logger LOG = LoggerFactory.getLogger(MainPage.class);
     private final DriverUtils driverUtils;
     private final WebDriver driver;
 
@@ -37,6 +40,7 @@ public class MainPage {
      * Performs a click action on the login button.
      */
     public void clickLoginButton() {
+        LOG.info("Clicking login button...");
         driverUtils.clickElement(loginButton);
     }
 
@@ -45,7 +49,10 @@ public class MainPage {
      */
     public void closeWelcomeDialogIfPresent() {
         if (isWelcomeDialogPresent()) {
+            LOG.info("Welcome dialog was visible, closing...");
             clickCloseWelcomeDialogButton();
+        } else{
+            LOG.info("Welcome dialog was not visible after logging in.");
         }
     }
 
@@ -53,6 +60,7 @@ public class MainPage {
      * Performs a click action on the logout button.
      */
     public void clickLogoutButton() {
+        LOG.info("Clicking Logout button...");
         driverUtils.clickElement(logOutButton);
     }
 
