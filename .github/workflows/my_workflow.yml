@@ -1,9 +1,9 @@
-name: Run TestNG Tests Daily at 8 AM
+name: Run TestNG Tests Hourly Every Day In The Morning
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8,12 * * *'
+    - cron: '0 7-12 * * *'
 
 jobs:
   build-and-test:
