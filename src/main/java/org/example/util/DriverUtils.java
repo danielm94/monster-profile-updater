@@ -18,7 +18,7 @@ public class DriverUtils {
     private final WebDriver driver;
     private final Duration timeout;
 
-    private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(10);
+    private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(20);
 
     /**
      * Constructor with a specified timeout.
